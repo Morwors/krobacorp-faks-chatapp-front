@@ -8,8 +8,8 @@ export class AuthGuard implements CanActivate {
   constructor(public userStore: UserStore, public router: Router) {}
   canActivate(): boolean {
     if (!this.userStore.user) {
-      // this.router.navigate(['login']);
-      // return false;
+      this.router.navigate(['login']);
+      return false;
       return true;
     }
     return true;
